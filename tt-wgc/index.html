@@ -1,23 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Python on GitHub Pages</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython.min.js"></script>
+  <meta charset="UTF-8" />
+  <title>Terraforming Titans WGC Team Optimizer</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body onload="brython()">
-    <h1>Hello from Python on GitHub Pages!</h1>
-    
-    <button id="run-btn">Run Python</button>
-    <p id="output"></p>
+<body>
+  <h1>Terraforming Titans - Team Optimizer</h1>
 
-    <script type="text/python">
-        from browser import document
+  <section class="top">
+    <input id="shoot" placeholder="Shooting %" />
+    <input id="obst" placeholder="Obstacle %" />
+    <input id="lib" placeholder="Library %" />
 
-        def say_hello(event):
-            document["output"].text = "Python says: Hello, world!"
+    <select id="success"></select>
+    <input id="hazard" placeholder="Hazard" disabled />
+    <input id="maxLevel" placeholder="Max Level" disabled />
+  </section>
 
-        document["run-btn"].bind("click", say_hello)
-    </script>
+  <section class="grid">
+    <div class="hdr">Slot</div>
+    <div class="hdr">Job</div>
+    <div class="hdr">Level</div>
+    <div class="hdr">Power</div>
+    <div class="hdr">Ath</div>
+    <div class="hdr">Wit</div>
+
+    <div>1</div>
+    <div>Leader</div>
+    <input id="leaderLvl" />
+    <input id="lP" disabled />
+    <input id="lA" disabled />
+    <input id="lW" disabled />
+
+    <div>2</div>
+    <select id="job1"></select>
+    <input id="lvl1" />
+    <input id="o1P" disabled />
+    <input id="o1A" disabled />
+    <input id="o1W" disabled />
+
+    <div>3</div>
+    <select id="job2"></select>
+    <input id="lvl2" />
+    <input id="o2P" disabled />
+    <input id="o2A" disabled />
+    <input id="o2W" disabled />
+
+    <div>4</div>
+    <select id="job3"></select>
+    <input id="lvl3" />
+    <input id="o3P" disabled />
+    <input id="o3A" disabled />
+    <input id="o3W" disabled />
+  </section>
+
+  <div class="buttons">
+    <button onclick="calculate()">Calculate</button>
+    <button onclick="toggleTheme()">Light / Dark</button>
+  </div>
+
+  <script src="backend.js"></script>
 </body>
 </html>
