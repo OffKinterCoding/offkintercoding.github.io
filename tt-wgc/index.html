@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Python on GitHub Pages</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.11.1/brython.min.js"></script>
+</head>
+<body onload="brython()">
+    <h1>Hello from Python on GitHub Pages!</h1>
+    
+    <button id="run-btn">Run Python</button>
+    <p id="output"></p>
+
+    <script type="text/python">
+        from browser import document
+
+        def say_hello(event):
+            document["output"].text = "Python says: Hello, world!"
+
+        document["run-btn"].bind("click", say_hello)
+    </script>
+</body>
+</html>
